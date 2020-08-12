@@ -20,28 +20,32 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cubature&#39;s Notes">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前言很长一段时间都觉得各种各样的编辑器实在是太过臃肿，虽然不需要使用所有的功能但是每次打开软件都需要等待很长的一段加载时间。于是之前也被Sublime的简洁吸引而使用过一段时间。但是在使用过程中从来没有认真定制过想要 的插件，以至于Sublime使用起来跟普通的Notepad没有区别。而后逐渐接触了一些需要操作远程Linux主机的项目，由于不能自由安装软件，因此学习了一些Vim的基本操作。在搜索V">
+<meta property="og:type" content="article">
+<meta property="og:title" content="捣鼓Emacs">
+<meta property="og:url" content="http://yoursite.com/2020/08/11/Playing_Emacs/index.html">
 <meta property="og:site_name" content="Cubature&#39;s Notes">
+<meta property="og:description" content="前言很长一段时间都觉得各种各样的编辑器实在是太过臃肿，虽然不需要使用所有的功能但是每次打开软件都需要等待很长的一段加载时间。于是之前也被Sublime的简洁吸引而使用过一段时间。但是在使用过程中从来没有认真定制过想要 的插件，以至于Sublime使用起来跟普通的Notepad没有区别。而后逐渐接触了一些需要操作远程Linux主机的项目，由于不能自由安装软件，因此学习了一些Vim的基本操作。在搜索V">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-10T22:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-12T22:18:26.977Z">
 <meta property="article:author" content="cubature">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/08/11/Playing_Emacs/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Cubature's Notes</title>
+  <title>捣鼓Emacs | Cubature's Notes</title>
   
 
 
@@ -167,9 +171,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -185,10 +190,9 @@
       <meta itemprop="name" content="Cubature's Notes">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/11/Playing_Emacs/" class="post-title-link" itemprop="url">捣鼓Emacs</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          捣鼓Emacs
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -218,7 +222,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很长一段时间都觉得各种各样的编辑器实在是太过臃肿，虽然不需要使用所有的功能但是每次打开软件都需要等待很长的一段加载时间。于是之前也被Sublime的简洁吸引而使用过一段时间。但是在使用过程中从来没有认真定制过想要 的插件，以至于Sublime使用起来跟普通的Notepad没有区别。而后逐渐接触了一些需要操作远程Linux主机的项目，由于不能自由安装软件，因此学习了一些Vim的基本操作。在搜索Vim教程的时候看到了不少对其封神的声音，发现正好符合我之前想要一个简洁的编辑器的需求。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>很长一段时间都觉得各种各样的编辑器实在是太过臃肿，虽然不需要使用所有的功能但是每次打开软件都需要等待很长的一段加载时间。于是之前也被Sublime的简洁吸引而使用过一段时间。但是在使用过程中从来没有认真定制过想要 的插件，以至于Sublime使用起来跟普通的Notepad没有区别。而后逐渐接触了一些需要操作远程Linux主机的项目，由于不能自由安装软件，因此学习了一些Vim的基本操作。在搜索Vim教程的时候看到了不少对其封神的声音，发现正好符合我之前想要一个简洁的编辑器的需求。</p>
 <p>在学习Vim的过程中拜读了不少文章，让我了解了更多的其他的编辑器与IDE，在看过<a target="_blank" rel="noopener" href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-zh.org">一年成为Emacs高手 (像神一样使用编辑器)</a>一文后，我决定尝试Emacs。由于有使用Vim的经验，于是决定选择Spacemacs作为自己入门的配置。</p>
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>由于<a target="_blank" rel="noopener" href="https://emacs-china.org/t/topic/992/12">Emacs默认的中文配置问题</a>，导致在Windows10环境下只要buffer中的文件中有出现中文就会非常卡顿，于是需要先到<code>.spacemacs</code>文件中更改中文字体为宋体或微软雅黑：</p>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/52693161">在<code>(defun dotspacemacs/user-config ())</code>中添加</a>：</p>
@@ -342,106 +346,30 @@
 <p>然而基础知识却很难过时，因为基础知识一般都是构成以上所说新工具的底层，底层若是变动，那么上层也将会迎来很大的改动。因此很多时候只要掌握底层知识，然后了解一个工具的实现原理，基本上要掌握这个工具就不会很难了。事实上在大学的课程里，这些基本知识都已经被教授们抽丝剥茧地提炼并传授给我们，只是在没有项目经验的情况下，我们根本不知道这些基础知识要怎么应用或有什么价值，然后就很难产生深刻的印象，很快就把知识全还给老师了。在刚毕业时还会听到大家抱怨学校总是教一堆理论，没有实践，以至于出来社会后发现自己好像什么都不会，不如国外的大学那样一堆实习，早早就接触到项目。后来才发现，这些实际项目中使用到的工具都是基于大学课堂上的“没用”的知识上，而后纷纷后悔学生时期没有认真听课。如果只是想要迅速上手并投入项目，一个技术培训的效率可能要比大学课堂高，但若真想提升个人技术水平，还是需要扎根基础知识。基础知识很有必要了解学习，而工具只需要在用到的时候查找文档就可以了。</p>
 <p>说着说着有点像说哲学、数学或是音乐等艺术。最近发现不止编程，其实各个方面的知识的本质都已经在学校课堂上被披露给学生了，只是没有经验的学生不知道这些知识总结的可贵，在经历过各种成功或挫折后才发现自己回归到了课堂的知识上，这个螺旋上升的过程似乎很难避免。实际上也不止于课堂，很多前人总结的经验结晶总是难以被他人理解，或是后人执着于自己造轮子，殊不知善于吸引前人经验与站在巨人的肩膀上才能走得更远。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/09/markdown-basic/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="cubature">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cubature's Notes">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/08/09/markdown-basic/" class="post-title-link" itemprop="url">markdown基本语法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-09 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-09T00:00:00+02:00">2020-08-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 00:07:34" itemprop="dateModified" datetime="2020-08-13T00:07:34+02:00">2020-08-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>参考文章<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/191d1e21f7ed">markdown基本语法</a></p>
-<h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#  一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">……</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure>
-
-<h1 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*斜体*</span><br><span class="line">**加粗**</span><br><span class="line">***任何加粗***</span><br><span class="line">~~删除线~~</span><br></pre></td></tr></table></figure>
-
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;引用内容</span><br><span class="line">&gt;&gt;还是引用内容</span><br><span class="line">……</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;多层引用</span><br></pre></td></tr></table></figure>
-
-<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">****</span><br></pre></td></tr></table></figure>
-
-<h1 id="链接与图片"><a href="#链接与图片" class="headerlink" title="链接与图片"></a>链接与图片</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[链接描述文字](链接地址)</span><br><span class="line">![图片描述文字](图片地址)</span><br></pre></td></tr></table></figure>
-
-<h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">无序列表</span><br><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line"></span><br><span class="line">有序列表</span><br><span class="line">1. 列表内容</span><br><span class="line">2. 列表内容</span><br><span class="line">3. 列表内容</span><br></pre></td></tr></table></figure>
-
-<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">表头|表头|表头</span><br><span class="line">---|:--:|---:</span><br><span class="line">内容|内容|内容</span><br><span class="line">内容|内容|内容</span><br><span class="line"></span><br><span class="line">第二行分割表头和内容。</span><br><span class="line">- 有一个就行，为了对齐，多加了几个</span><br><span class="line">文字默认居左</span><br><span class="line">-两边加：表示文字居中</span><br><span class="line">-右边加：表示文字居右</span><br><span class="line">注：原生的语法两边都要用 | 包起来。此处省略</span><br></pre></td></tr></table></figure>
-
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>`代码内容`</p>
-<p>```<br>代码块<br>```</p>
-<h1 id="流程图等"><a href="#流程图等" class="headerlink" title="流程图等"></a>流程图等</h1><p>不是所有工具都默认支持这类语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;flow</span><br><span class="line">st&#x3D;&gt;start: 开始</span><br><span class="line">op&#x3D;&gt;operation: My Operation</span><br><span class="line">cond&#x3D;&gt;condition: Yes or No?</span><br><span class="line">e&#x3D;&gt;end</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br><span class="line">&#96; &#96;&#96;</span><br></pre></td></tr></table></figure>
+        
 
 
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/09/markdown-basic/" rel="prev" title="markdown基本语法">
+      <i class="fa fa-chevron-left"></i> markdown基本语法
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -494,6 +422,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-number">2.2.</span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Org-Mode"><span class="nav-number">2.3.</span> <span class="nav-text">Org Mode</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">2.3.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.3.2.</span> <span class="nav-text">常用设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">2.3.3.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E7%BA%B2"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">大纲</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9"><span class="nav-number">2.3.3.3.</span> <span class="nav-text">待办事项</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
