@@ -20,15 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cubature&#39;s Notes">
-<meta property="og:url" content="http://yoursite.com/archives/2020/08/index.html">
+  <meta name="description" content="好看的log graph在~&#x2F;.gitconfig中加入以下设置可在全局使用别人配置好的带graph的log显示： 1234[alias]  lg1 &#x3D; log --graph --abbrev-commit --decorate --format&#x3D;format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(rese">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有用但用得不多总忘的git命令">
+<meta property="og:url" content="http://yoursite.com/2020/08/16/git/index.html">
 <meta property="og:site_name" content="Cubature&#39;s Notes">
+<meta property="og:description" content="好看的log graph在~&#x2F;.gitconfig中加入以下设置可在全局使用别人配置好的带graph的log显示： 1234[alias]  lg1 &#x3D; log --graph --abbrev-commit --decorate --format&#x3D;format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(rese">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-15T22:00:00.000Z">
+<meta property="article:modified_time" content="2020-08-16T14:15:19.561Z">
 <meta property="article:author" content="cubature">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/08/">
+<link rel="canonical" href="http://yoursite.com/2020/08/16/git/">
 
 
 <script id="page-configurations">
@@ -36,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Cubature's Notes</title>
+  <title>有用但用得不多总忘的git命令 | Cubature's Notes</title>
   
 
 
@@ -167,116 +172,97 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 4 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/16/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cubature">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubature's Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          有用但用得不多总忘的git命令
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-16 00:00:00 / 修改时间：16:15:19" itemprop="dateCreated datePublished" datetime="2020-08-16T00:00:00+02:00">2020-08-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-16T00:00:00+02:00"
-              content="2020-08-16">
-          08-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/16/git/" itemprop="url">
-            <span itemprop="name">有用但用得不多总忘的git命令</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-13T00:00:00+02:00"
-              content="2020-08-13">
-          08-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/13/Hexo_Notes/" itemprop="url">
-            <span itemprop="name">Hexo Next笔记</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-11T00:00:00+02:00"
-              content="2020-08-11">
-          08-11
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/11/Playing_Emacs/" itemprop="url">
-            <span itemprop="name">捣鼓Emacs</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-09T00:00:00+02:00"
-              content="2020-08-09">
-          08-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/09/markdown-basic/" itemprop="url">
-            <span itemprop="name">markdown基本语法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="好看的log-graph"><a href="#好看的log-graph" class="headerlink" title="好看的log graph"></a>好看的log graph</h1><p>在<code>~/.gitconfig</code>中加入以下设置可在全局使用<a target="_blank" rel="noopener" href="https://stackoverflow.com/a/9074343">别人配置好</a>的带graph的log显示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[alias]</span><br><span class="line">  lg1 &#x3D; log --graph --abbrev-commit --decorate --format&#x3D;format:&#39;%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)&#39; --all</span><br><span class="line">  lg2 &#x3D; log --graph --abbrev-commit --decorate --format&#x3D;format:&#39;%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n&#39;&#39;          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)&#39; --all</span><br><span class="line">  lg &#x3D; !&quot;git lg1&quot;</span><br></pre></td></tr></table></figure>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/13/Hexo_Notes/" rel="prev" title="Hexo Next笔记">
+      <i class="fa fa-chevron-left"></i> Hexo Next笔记
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -323,6 +309,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A5%BD%E7%9C%8B%E7%9A%84log-graph"><span class="nav-number">1.</span> <span class="nav-text">好看的log graph</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -450,6 +437,25 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '8cb8626d289c9ec3e1aa',
+      clientSecret: '7326583712d209007dcc0a0f32c00809f602b465',
+      repo        : 'cubature.github.io',
+      owner       : 'cubature',
+      admin       : ['cubature'],
+      id          : '8af0e0afead8b26ae5b36bfa3bd010f5',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>

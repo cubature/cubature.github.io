@@ -28,8 +28,10 @@
 <meta property="og:description" content="前言很长一段时间都觉得各种各样的编辑器实在是太过臃肿，虽然不需要使用所有的功能但是每次打开软件都需要等待很长的一段加载时间。于是之前也被Sublime的简洁吸引而使用过一段时间。但是在使用过程中从来没有认真定制过想要 的插件，以至于Sublime使用起来跟普通的Notepad没有区别。而后逐渐接触了一些需要操作远程Linux主机的项目，由于不能自由安装软件，因此学习了一些Vim的基本操作。在搜索V">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-10T22:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-12T22:18:26.977Z">
+<meta property="article:modified_time" content="2020-08-16T13:50:28.522Z">
 <meta property="article:author" content="cubature">
+<meta property="article:tag" content="Emacs">
+<meta property="article:tag" content="Spacemacs">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/08/11/Playing_Emacs/">
@@ -208,8 +210,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-13 00:18:26" itemprop="dateModified" datetime="2020-08-13T00:18:26+02:00">2020-08-13</time>
+                <time title="修改时间：2020-08-16 15:50:28" itemprop="dateModified" datetime="2020-08-16T15:50:28+02:00">2020-08-16</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
 
           
 
@@ -353,6 +364,10 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Emacs/" rel="tag"># Emacs</a>
+              <a href="/tags/Spacemacs/" rel="tag"># Spacemacs</a>
+          </div>
 
         
 
@@ -363,7 +378,10 @@
     <a href="/2020/08/09/markdown-basic/" rel="prev" title="markdown基本语法">
       <i class="fa fa-chevron-left"></i> markdown基本语法
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/08/13/Hexo_Notes/" rel="next" title="Hexo Next笔记">
+      Hexo Next笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -376,6 +394,7 @@
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -438,9 +457,19 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -539,6 +568,26 @@
   
 
   
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '8cb8626d289c9ec3e1aa',
+      clientSecret: '7326583712d209007dcc0a0f32c00809f602b465',
+      repo        : 'cubature.github.io',
+      owner       : 'cubature',
+      admin       : ['cubature'],
+      id          : '875f6383422c73bccd69601e52d24dae',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
