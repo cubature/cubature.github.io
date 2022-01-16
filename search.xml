@@ -171,7 +171,7 @@
     <title>Hexo Next笔记</title>
     <url>/2020/08/13/Hexo_Notes/</url>
     <content><![CDATA[<h1 id="基操"><a href="#基操" class="headerlink" title="基操"></a>基操</h1><p>没有全局安装Hexo的时候可以使用npx命令（npm&gt;=5.2支持）开头来运行hexo</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx hexo init #初始化Hexo项目</span><br><span class="line">npx hexo s[erver] #启动本地Hexo服务器</span><br><span class="line">npx hexo g[enerate] #生成Hexo静态网站文件</span><br><span class="line">npx hexo d[eploy -g] #[先生成新静态网站文件]部署Hexo静态网站</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npx hexo init #初始化Hexo项目</span><br><span class="line">npx hexo s[erver] [--draft] #启动本地Hexo服务器，--draft 用于显示草稿</span><br><span class="line">npx hexo g[enerate] #生成Hexo静态网站文件</span><br><span class="line">npx hexo d[eploy -g] #[先生成新静态网站文件]部署Hexo静态网站</span><br></pre></td></tr></table></figure>
 
 <h1 id="部署配置"><a href="#部署配置" class="headerlink" title="部署配置"></a>部署配置</h1><p>Hexo部署配置在<code>_config.yml</code>文件中定义。如需部署到Github上，需进行如下配置：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  name: [github name]</span><br><span class="line">  email: [github email]</span><br></pre></td></tr></table></figure>
@@ -214,6 +214,7 @@
 <p>Next的<a href="https://github.com/theme-next/hexo-theme-next/releases/tag/v7.7.0">7.7.0</a>默认集成了Gitalk，因此只需修改<code>&lt;Next root&gt;/_config.yml</code>即可。其中需要用到刚刚在Github上注册应用后获得的Client ID和Client Secret：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  github_id: github_user_name # GitHub repo owner</span><br><span class="line">  repo: xxxxx.github.io # Repository name to store issues</span><br><span class="line">  client_id: # GitHub Application Client ID</span><br><span class="line">  client_secret: # GitHub Application Client Secret</span><br><span class="line">  admin_user: github_user_name # GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span><br><span class="line">  distraction_free_mode: true # Facebook-like distraction free mode</span><br><span class="line">  # Gitalk&#39;s display language depends on user&#39;s browser or system environment</span><br><span class="line">  # If you want everyone visiting your site to see a uniform language, you can set a force language value</span><br><span class="line">  # Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
 
+<p>然后将修改部署到网站上，博主需要先访问网站并登录评论系统将其激活。</p>
 <h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>或者写</p>
 ]]></content>
       <categories>
@@ -234,6 +235,24 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>处理go mod tidy的module declares its path as X but was required as Y问题</title>
+    <url>/2022/01/16/go_mod_name_url_dismatch/</url>
+    <content><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>最近打算将工作环境搬到linux上来，因此工作常用的项目需要一些重新配置。由于历史原因，项目一直存在一些依赖管理的问题，例如标题遇到的这个问题。其实之前遇到的时候已经解决过一次，但是没有记录下来，导致这些处理又花费了些时间。。</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在使用go mod tidy的时候遇上了<code>module declares its path as X but was required as Y</code>的问题，首先想到的方法便是在<code>go.mod</code>文件中添加<code>replace</code>关键字，但是老旧项目的依赖管理可不是一般恶心，它不仅包名与库链接名不同，内部代码引用自己包的内容的时候还使用了包含旧库链接的包名（没错，库迁移过），所以replace后go再次懵逼（什么？旧库是谁？）。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>其实之前已经解决过一次（也不知道怎么想到的…），在运行<code>go mod tidy</code>后，其实相应包的<code>go.mod</code>已经下载到了<code>$&#123;GOPATH&#125;/pkg/mod/cache/download/&#123;仓库名&#125;/@v/</code>目录下，并且文件名是带有版本号的（如<code>v0.0.1.mod</code>），这时只需要进入该文件中，将其中的包名<code>X</code>改为<code>Y</code>即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 下载下来错误的包名</span><br><span class="line">module X</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 改为声明的想要使用的包名</span><br><span class="line">module Y</span><br></pre></td></tr></table></figure>
+<p>之后再次运行<code>go mod tidy</code>即可。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>上面这是由于历史原因，项目还需要使用特定旧版本的依赖，且不能随意fork下来新建仓库的时候才会遇到的问题。正常的做法还是需要提供依赖包的开发者做好管理，使用者发现问题时可以向原包的作者提issue等解决，或是使用<code>replace</code>、自己fork下来修改后再引用等。</p>
+]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>golang</tag>
+        <tag>go modules</tag>
       </tags>
   </entry>
 </search>

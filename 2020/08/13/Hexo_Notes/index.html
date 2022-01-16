@@ -20,16 +20,16 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="基操没有全局安装Hexo的时候可以使用npx命令（npm&gt;&#x3D;5.2支持）开头来运行hexo 1234npx hexo init #初始化Hexo项目npx hexo s[erver] #启动本地Hexo服务器npx hexo g[enerate] #生成Hexo静态网站文件npx hexo d[eploy -g] #[先生成新静态网站文件]部署Hexo静态网站  部署配置Hexo部署配置在_">
+  <meta name="description" content="基操没有全局安装Hexo的时候可以使用npx命令（npm&gt;&#x3D;5.2支持）开头来运行hexo 1234npx hexo init #初始化Hexo项目npx hexo s[erver] [--draft] #启动本地Hexo服务器，--draft 用于显示草稿npx hexo g[enerate] #生成Hexo静态网站文件npx hexo d[eploy -g] #[先生成新静态网站文件]部">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Next笔记">
 <meta property="og:url" content="http://yoursite.com/2020/08/13/Hexo_Notes/index.html">
 <meta property="og:site_name" content="Cubature&#39;s Notes">
-<meta property="og:description" content="基操没有全局安装Hexo的时候可以使用npx命令（npm&gt;&#x3D;5.2支持）开头来运行hexo 1234npx hexo init #初始化Hexo项目npx hexo s[erver] #启动本地Hexo服务器npx hexo g[enerate] #生成Hexo静态网站文件npx hexo d[eploy -g] #[先生成新静态网站文件]部署Hexo静态网站  部署配置Hexo部署配置在_">
+<meta property="og:description" content="基操没有全局安装Hexo的时候可以使用npx命令（npm&gt;&#x3D;5.2支持）开头来运行hexo 1234npx hexo init #初始化Hexo项目npx hexo s[erver] [--draft] #启动本地Hexo服务器，--draft 用于显示草稿npx hexo g[enerate] #生成Hexo静态网站文件npx hexo d[eploy -g] #[先生成新静态网站文件]部">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/OAuth_Apps.png">
-<meta property="article:published_time" content="2020-08-12T22:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-16T21:44:25.652Z">
+<meta property="article:published_time" content="2020-08-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-28T16:18:56.366Z">
 <meta property="article:author" content="cubature">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -204,14 +204,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-08-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-13T00:00:00+02:00">2020-08-13</time>
+              <time title="创建时间：2020-08-13 00:00:00" itemprop="dateCreated datePublished" datetime="2020-08-13T00:00:00+08:00">2020-08-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-16 23:44:25" itemprop="dateModified" datetime="2020-08-16T23:44:25+02:00">2020-08-16</time>
+                <time title="修改时间：2021-04-29 00:18:56" itemprop="dateModified" datetime="2021-04-29T00:18:56+08:00">2021-04-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +235,7 @@
 
       
         <h1 id="基操"><a href="#基操" class="headerlink" title="基操"></a>基操</h1><p>没有全局安装Hexo的时候可以使用npx命令（npm&gt;=5.2支持）开头来运行hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npx hexo init #初始化Hexo项目</span><br><span class="line">npx hexo s[erver] #启动本地Hexo服务器</span><br><span class="line">npx hexo g[enerate] #生成Hexo静态网站文件</span><br><span class="line">npx hexo d[eploy -g] #[先生成新静态网站文件]部署Hexo静态网站</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npx hexo init #初始化Hexo项目</span><br><span class="line">npx hexo s[erver] [--draft] #启动本地Hexo服务器，--draft 用于显示草稿</span><br><span class="line">npx hexo g[enerate] #生成Hexo静态网站文件</span><br><span class="line">npx hexo d[eploy -g] #[先生成新静态网站文件]部署Hexo静态网站</span><br></pre></td></tr></table></figure>
 
 <h1 id="部署配置"><a href="#部署配置" class="headerlink" title="部署配置"></a>部署配置</h1><p>Hexo部署配置在<code>_config.yml</code>文件中定义。如需部署到Github上，需进行如下配置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  name: [github name]</span><br><span class="line">  email: [github email]</span><br></pre></td></tr></table></figure>
@@ -278,6 +278,7 @@
 <p>Next的<a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next/releases/tag/v7.7.0">7.7.0</a>默认集成了Gitalk，因此只需修改<code>&lt;Next root&gt;/_config.yml</code>即可。其中需要用到刚刚在Github上注册应用后获得的Client ID和Client Secret：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  github_id: github_user_name # GitHub repo owner</span><br><span class="line">  repo: xxxxx.github.io # Repository name to store issues</span><br><span class="line">  client_id: # GitHub Application Client ID</span><br><span class="line">  client_secret: # GitHub Application Client Secret</span><br><span class="line">  admin_user: github_user_name # GitHub repo owner and collaborators, only these guys can initialize gitHub issues</span><br><span class="line">  distraction_free_mode: true # Facebook-like distraction free mode</span><br><span class="line">  # Gitalk&#39;s display language depends on user&#39;s browser or system environment</span><br><span class="line">  # If you want everyone visiting your site to see a uniform language, you can set a force language value</span><br><span class="line">  # Available values: en | es-ES | fr | ru | zh-CN | zh-TW</span><br><span class="line">  language:</span><br></pre></td></tr></table></figure>
 
+<p>然后将修改部署到网站上，博主需要先访问网站并登录评论系统将其激活。</p>
 <h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>或者写</p>
 
     </div>
@@ -379,7 +380,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -390,7 +391,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -416,8 +417,8 @@
 
 <div class="copyright">
   
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class=""></i>
   </span>

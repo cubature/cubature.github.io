@@ -20,15 +20,21 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Cubature&#39;s Notes">
-<meta property="og:url" content="http://yoursite.com/tags/git/index.html">
+  <meta name="description" content="背景最近打算将工作环境搬到linux上来，因此工作常用的项目需要一些重新配置。由于历史原因，项目一直存在一些依赖管理的问题，例如标题遇到的这个问题。其实之前遇到的时候已经解决过一次，但是没有记录下来，导致这些处理又花费了些时间。。 问题在使用go mod tidy的时候遇上了module declares its path as X but was required as Y的问题，首先想到的方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="处理go mod tidy的module declares its path as X but was required as Y问题">
+<meta property="og:url" content="http://yoursite.com/2022/01/16/go_mod_name_url_dismatch/index.html">
 <meta property="og:site_name" content="Cubature&#39;s Notes">
+<meta property="og:description" content="背景最近打算将工作环境搬到linux上来，因此工作常用的项目需要一些重新配置。由于历史原因，项目一直存在一些依赖管理的问题，例如标题遇到的这个问题。其实之前遇到的时候已经解决过一次，但是没有记录下来，导致这些处理又花费了些时间。。 问题在使用go mod tidy的时候遇上了module declares its path as X but was required as Y的问题，首先想到的方法">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-16T12:41:05.716Z">
 <meta property="article:author" content="cubature">
+<meta property="article:tag" content="golang">
+<meta property="article:tag" content="go modules">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/tags/git/">
+<link rel="canonical" href="http://yoursite.com/2022/01/16/go_mod_name_url_dismatch/">
 
 
 <script id="page-configurations">
@@ -36,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: git | Cubature's Notes</title>
+  <title>处理go mod tidy的module declares its path as X but was required as Y问题 | Cubature's Notes</title>
   
 
 
@@ -167,57 +173,102 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">git
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/01/16/go_mod_name_url_dismatch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="cubature">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cubature's Notes">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          处理go mod tidy的module declares its path as X but was required as Y问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-16 00:00:00 / 修改时间：20:41:05" itemprop="dateCreated datePublished" datetime="2022-01-16T00:00:00+08:00">2022-01-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">编程</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>最近打算将工作环境搬到linux上来，因此工作常用的项目需要一些重新配置。由于历史原因，项目一直存在一些依赖管理的问题，例如标题遇到的这个问题。其实之前遇到的时候已经解决过一次，但是没有记录下来，导致这些处理又花费了些时间。。</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在使用go mod tidy的时候遇上了<code>module declares its path as X but was required as Y</code>的问题，首先想到的方法便是在<code>go.mod</code>文件中添加<code>replace</code>关键字，但是老旧项目的依赖管理可不是一般恶心，它不仅包名与库链接名不同，内部代码引用自己包的内容的时候还使用了包含旧库链接的包名（没错，库迁移过），所以replace后go再次懵逼（什么？旧库是谁？）。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>其实之前已经解决过一次（也不知道怎么想到的…），在运行<code>go mod tidy</code>后，其实相应包的<code>go.mod</code>已经下载到了<code>$&#123;GOPATH&#125;/pkg/mod/cache/download/&#123;仓库名&#125;/@v/</code>目录下，并且文件名是带有版本号的（如<code>v0.0.1.mod</code>），这时只需要进入该文件中，将其中的包名<code>X</code>改为<code>Y</code>即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 下载下来错误的包名</span><br><span class="line">module X</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 改为声明的想要使用的包名</span><br><span class="line">module Y</span><br></pre></td></tr></table></figure>
+<p>之后再次运行<code>go mod tidy</code>即可。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>上面这是由于历史原因，项目还需要使用特定旧版本的依赖，且不能随意fork下来新建仓库的时候才会遇到的问题。正常的做法还是需要提供依赖包的开发者做好管理，使用者发现问题时可以向原包的作者提issue等解决，或是使用<code>replace</code>、自己fork下来修改后再引用等。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-16T06:00:00+08:00"
-              content="2020-08-16">
-          08-16
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/golang/" rel="tag"># golang</a>
+              <a href="/tags/go-modules/" rel="tag"># go modules</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/16/git/" itemprop="url">
-            <span itemprop="name">有用但用得不多总忘的git命令</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/08/16/git/" rel="prev" title="有用但用得不多总忘的git命令">
+      <i class="fa fa-chevron-left"></i> 有用但用得不多总忘的git命令
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
 
           </div>
           
+    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -264,6 +315,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -391,6 +443,25 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '8cb8626d289c9ec3e1aa',
+      clientSecret: '7326583712d209007dcc0a0f32c00809f602b465',
+      repo        : 'cubature.github.io',
+      owner       : 'cubature',
+      admin       : ['cubature'],
+      id          : '3e7618db66665be84a8f479f61dc2307',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 </body>
 </html>
